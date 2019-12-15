@@ -37,7 +37,7 @@ const plugins: IPlugin[] = [
       //   include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
       //   exclude: ['@babel/runtime', 'netlify-lambda'],
       // },
-      dll: false,
+      dll: true,
     },
   ],
   [

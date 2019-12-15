@@ -86,18 +86,20 @@ const extra = (
 
 const description = (
   <RouteContext.Consumer>
-    {({ isMobile }) => (
-      <Descriptions className={styles.headerList} size="small" column={isMobile ? 1 : 2}>
-        <Descriptions.Item label="创建人">曲丽丽</Descriptions.Item>
-        <Descriptions.Item label="订购产品">XX 服务</Descriptions.Item>
-        <Descriptions.Item label="创建时间">2017-07-07</Descriptions.Item>
-        <Descriptions.Item label="关联单据">
-          <a href="">12421</a>
-        </Descriptions.Item>
-        <Descriptions.Item label="生效日期">2017-07-07 ~ 2017-08-08</Descriptions.Item>
-        <Descriptions.Item label="备注">请于两个工作日内确认</Descriptions.Item>
-      </Descriptions>
-    )}
+    {({ isMobile }) => {
+      return (
+        <Descriptions className={styles.headerList} size="small" column={isMobile ? 1 : 2}>
+          <Descriptions.Item label="创建人">曲丽丽</Descriptions.Item>
+          <Descriptions.Item label="订购产品">XX 服务</Descriptions.Item>
+          <Descriptions.Item label="创建时间">2017-07-07</Descriptions.Item>
+          <Descriptions.Item label="关联单据">
+            <a href="">12421</a>
+          </Descriptions.Item>
+          <Descriptions.Item label="生效日期">2017-07-07 ~ 2017-08-08</Descriptions.Item>
+          <Descriptions.Item label="备注">请于两个工作日内确认</Descriptions.Item>
+        </Descriptions>
+      )
+    }}
   </RouteContext.Consumer>
 );
 
@@ -299,7 +301,8 @@ class Advanced extends Component<
           <GridContent>
             <Card title="流程进度" style={{ marginBottom: 24 }}>
               <RouteContext.Consumer>
-                {({ isMobile }) => (
+                {({ isMobile }) => {
+                  return (
                   <Steps
                     direction={isMobile ? 'vertical' : 'horizontal'}
                     progressDot={customDot}
@@ -310,7 +313,7 @@ class Advanced extends Component<
                     <Step title="财务复核" />
                     <Step title="完成" />
                   </Steps>
-                )}
+                )}}
               </RouteContext.Consumer>
             </Card>
             <Card title="用户信息" style={{ marginBottom: 24 }} bordered={false}>
